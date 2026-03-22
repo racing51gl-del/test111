@@ -1,25 +1,29 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Partnership Inquiry</title>
-  <link href='/style.css' rel='stylesheet'>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slamdunk51's Hiking Log</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>Partnership Inquiry</h1>
-    <button id="theme-toggle">다크모드</button>
-  </header>
-  <form id="contact-form" action="https://formspree.io/f/mbdzewpa" method="POST">
-    <label for="name">Name:</label>
-    <input type="text" id="name" name="name" required>
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email" required>
-    <label for="message">Message:</label>
-    <textarea id="message" name="message" required></textarea>
-    <button type="submit">Send</button>
-  </form>
-  <script defer type="text/javascript" src="/main.js"></script>
+    <header>
+        <h1>Slamdunk51's Hiking Log</h1>
+        <button id="theme-toggle">다크모드</button>
+    </header>
+
+    <main>
+        <section id="analysis">
+            <h2>요약</h2>
+            <div id="summary"></div>
+        </section>
+        
+        <section id="hiking-log">
+            <h2>등산 기록</h2>
+            <div id="log-container"></div>
+        </section>
+    </main>
+
+    <script src="main.js"></script>
 </body>
 </html>

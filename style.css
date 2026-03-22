@@ -1,68 +1,167 @@
 :root {
-  --bg-color: #ffffff;
-  --text-color: #000000;
-  --input-bg: #f0f0f0;
-  --input-border: #ccc;
-  --button-bg: #007bff;
-  --button-text: #ffffff;
-}
+    --background-color-light: #f0f2f5;
+    --text-color-light: #333;
+    --card-bg-light: #ffffff;
+    --header-bg-light: #ffffff;
+    --shadow-light: 0 4px 8px rgba(0, 0, 0, 0.1);
 
-body.dark-mode {
-  --bg-color: #121212;
-  --text-color: #ffffff;
-  --input-bg: #333333;
-  --input-border: #555555;
-  --button-bg: #bb86fc;
-  --button-text: #000000;
+    --background-color-dark: #1a1a1a;
+    --text-color-dark: #e0e0e0;
+    --card-bg-dark: #2a2a2a;
+    --header-bg-dark: #2a2a2a;
+    --shadow-dark: 0 5px 15px rgba(0, 0, 0, 0.3);
+
+    --accent-color: #4CAF50;
+    --font-family: 'Arial', sans-serif;
 }
 
 body {
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  font-family: sans-serif;
-  padding: 2em;
-  transition: background-color 0.3s, color 0.3s;
+    font-family: var(--font-family);
+    margin: 0;
+    background-color: var(--background-color-light);
+    color: var(--text-color-light);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode {
+    background-color: var(--background-color-dark);
+    color: var(--text-color-dark);
 }
 
 header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 2em;
+    background-color: var(--header-bg-light);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: var(--shadow-light);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+body.dark-mode header {
+    background-color: var(--header-bg-dark);
+    box-shadow: var(--shadow-dark);
+}
+
+h1 {
+    margin: 0;
+    font-size: 1.8rem;
 }
 
 #theme-toggle {
-  padding: 0.5em 1em;
-  border-radius: 5px;
-  border: none;
-  background-color: var(--button-bg);
-  color: var(--button-text);
-  cursor: pointer;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--accent-color);
+    background-color: transparent;
+    color: var(--accent-color);
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.2s, color 0.2s;
 }
 
-#contact-form {
-  display: flex;
-  flex-direction: column;
-  width: 300px;
+#theme-toggle:hover {
+    background-color: var(--accent-color);
+    color: white;
 }
 
-#contact-form label {
-  margin-top: 1em;
+main {
+    padding: 2rem;
 }
 
-#contact-form input,
-#contact-form textarea {
-  background-color: var(--input-bg);
-  color: var(--text-color);
-  border: 1px solid var(--input-border);
-  padding: 0.5em;
+#analysis, #hiking-log {
+    margin-bottom: 2rem;
 }
 
-#contact-form button {
-  margin-top: 1em;
-  padding: 0.5em;
-  background-color: var(--button-bg);
-  color: var(--button-text);
-  border: none;
-  cursor: pointer;
+h2 {
+    font-size: 1.5rem;
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+#summary {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.summary-item {
+    background: var(--card-bg-light);
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow-light);
+    text-align: center;
+}
+
+body.dark-mode .summary-item {
+    background: var(--card-bg-dark);
+    box-shadow: var(--shadow-dark);
+}
+
+.summary-item h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.1rem;
+    color: var(--accent-color);
+}
+
+.summary-item p {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+#log-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.log-card {
+    background: var(--card-bg-light);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--shadow-light);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.log-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+}
+
+body.dark-mode .log-card {
+    background: var(--card-bg-dark);
+    box-shadow: var(--shadow-dark);
+}
+
+body.dark-mode .log-card:hover {
+    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+}
+
+.log-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.log-card-content {
+    padding: 1.5rem;
+}
+
+.log-card-content h3 {
+    margin: 0 0 1rem 0;
+    font-size: 1.4rem;
+}
+
+.log-card-content p {
+    margin: 0.5rem 0;
+    display: flex;
+    align-items: center;
+}
+
+.log-card-content p strong {
+    margin-right: 0.5rem;
 }
