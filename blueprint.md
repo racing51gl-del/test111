@@ -1,4 +1,3 @@
-
 # Project Blueprint
 
 ## Overview
@@ -13,26 +12,23 @@ A web application to systematically display and analyze the hiking records from 
     *   A card-based layout for hiking records.
     *   Dedicated styling for the map container.
 *   **Functionality (`main.js`):**
-    *   **Real Data:** The application now uses a more extensive and realistic set of hiking data, including coordinates for map integration.
+    *   **Manual Data Management:** The application uses a comprehensive, manually curated dataset in `main.js`. This approach was chosen because direct, automated fetching from Instagram is not feasible due to technical and platform restrictions. The data is structured to be easily edited by the user.
+    *   **Rich Data Structure:** The dataset includes `id`, `mountain`, `date`, `distance`, `elevation`, `lat`, `lng`, a `caption` for a short description, and a realistic `image` URL for each hike.
     *   **Interactive Map (Leaflet.js):**
-        *   An interactive map is displayed, showing markers for each hike location.
+        *   An interactive map displays markers for each hike location.
         *   Clicking a map marker smoothly scrolls the page to the corresponding hike card.
-        *   Markers display a popup with the mountain's name on hover/click.
-    *   **Dynamic Rendering:** Hiking cards and summary statistics are dynamically generated from the data.
+    *   **Dynamic Rendering:** Hiking cards (including the new caption) and summary statistics are dynamically generated from the data.
     *   **Theme Toggle:** A persistent dark/light mode toggle.
 
-## Plan for Current Request: Add Real Data & Map Integration
+## Plan for Current Request: Reflect Real Posts via Manual Data Enhancement
 
-1.  **`index.html`:**
-    *   Add a `<div>` container for the map.
-    *   Include the Leaflet.js CSS and JavaScript files from a CDN.
-2.  **`style.css`:**
-    *   Add styling to define the map container's size and appearance (e.g., `height`, `width`).
-3.  **`main.js`:**
-    *   **Update Data:** Replace the placeholder data with a more realistic dataset that includes `id`, `lat` (latitude), and `lng` (longitude) for each hike.
-    *   **Initialize Map:** Create and initialize a Leaflet map, centered on a relevant location (e.g., Seoul).
-    *   **Add Map Markers:** Write a function to iterate through the data and add a marker to the map for each hike.
-    *   **Link Markers to Cards:** Implement an interaction where clicking a map marker scrolls the corresponding hike card into view.
-    *   **Update Card Rendering:** Assign a unique ID to each hike card to enable the map-to-card linking.
-4.  **GitHub:**
-    *   Commit the enhanced website files to the repository.
+1.  **Acknowledge Limitation:** Explain to the user that direct Instagram integration is not possible.
+2.  **Propose Manual Curation:** Suggest enhancing the application by manually adding a rich, realistic dataset that mimics the user's actual posts.
+3.  **`main.js` Update:**
+    *   **Expand Data Structure:** Add a `caption` field to the `hikingData` objects.
+    *   **Enrich Data:** Replace the placeholder data with a larger, more realistic dataset (approx. 20 entries) including plausible details and high-quality placeholder images.
+4.  **`index.html` & `style.css` Update:**
+    *   Modify the card structure in `index.html` (as rendered by `main.js`) to include the new `caption` field.
+    *   Add styling for the caption in `style.css` for better visual presentation.
+5.  **Commit and Deploy:** Save all changes to the GitHub repository.
+6.  **Provide Guidance:** Clearly explain to the user where and how they can edit the `hikingData` array in `main.js` to manage their hiking log in the future.

@@ -82,7 +82,7 @@ body.dark-mode #map-container {
 }
 
 #map {
-    height: 400px;
+    height: 450px; /* Increased height for better view */
     width: 100%;
 }
 
@@ -110,6 +110,7 @@ h2 {
     border-radius: 8px;
     box-shadow: var(--shadow-light);
     text-align: center;
+    flex-grow: 1;
 }
 
 body.dark-mode .summary-item {
@@ -131,8 +132,8 @@ body.dark-mode .summary-item {
 
 #log-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 2rem;
 }
 
 .log-card {
@@ -141,7 +142,7 @@ body.dark-mode .summary-item {
     overflow: hidden;
     box-shadow: var(--shadow-light);
     transition: transform 0.2s, box-shadow 0.2s;
-    scroll-margin-top: 80px; /* Offset for sticky header */
+    scroll-margin-top: 80px;
 }
 
 .log-card:hover {
@@ -160,7 +161,7 @@ body.dark-mode .log-card:hover {
 
 .log-card img {
     width: 100%;
-    height: 200px;
+    height: 220px;
     object-fit: cover;
 }
 
@@ -170,7 +171,21 @@ body.dark-mode .log-card:hover {
 
 .log-card-content h3 {
     margin: 0 0 1rem 0;
-    font-size: 1.4rem;
+    font-size: 1.6rem;
+    color: var(--accent-color);
+}
+
+.log-card-content .caption {
+    font-style: italic;
+    color: #666;
+    border-left: 3px solid #ccc;
+    padding-left: 1rem;
+    margin-bottom: 1rem;
+}
+
+body.dark-mode .log-card-content .caption {
+    color: #bbb;
+    border-left-color: #555;
 }
 
 .log-card-content p {
