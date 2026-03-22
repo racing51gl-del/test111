@@ -70,6 +70,22 @@ main {
     padding: 2rem;
 }
 
+#map-container {
+    margin-bottom: 2rem;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--shadow-light);
+}
+
+body.dark-mode #map-container {
+    box-shadow: var(--shadow-dark);
+}
+
+#map {
+    height: 400px;
+    width: 100%;
+}
+
 #analysis, #hiking-log {
     margin-bottom: 2rem;
 }
@@ -125,6 +141,7 @@ body.dark-mode .summary-item {
     overflow: hidden;
     box-shadow: var(--shadow-light);
     transition: transform 0.2s, box-shadow 0.2s;
+    scroll-margin-top: 80px; /* Offset for sticky header */
 }
 
 .log-card:hover {
