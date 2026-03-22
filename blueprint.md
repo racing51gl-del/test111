@@ -8,19 +8,15 @@ A simple, static "Partnership Inquiry" contact form website. The form collects a
 ## Current Features & Design
 
 *   **Structure:** A single `index.html` page.
-*   **Styling:** A single `style.css` file providing basic layout and styles.
-*   **Functionality:** An HTML form that sends data to a Formspree endpoint upon submission.
+*   **Styling:** A single `style.css` file providing basic layout and styles with CSS variables for theming.
+*   **Functionality:** 
+    *   An HTML form that sends data to a Formspree endpoint upon submission.
+    *   A dark/light mode theme toggle that persists using `localStorage`.
 
-## Plan for Current Request: Dark/Light Mode
+## Plan for Current Request: Dynamic Theme Button Text
 
-1.  **HTML:** Add a toggle button to `index.html` to allow users to switch between themes.
-2.  **CSS:**
-    *   Refactor `style.css` to use CSS variables for colors to facilitate easy theme switching.
-    *   Create two color palettes: one for light mode (default) and one for dark mode.
-    *   The dark mode styles will be applied when a `.dark-mode` class is present on the `<body>` element.
-3.  **JavaScript:**
-    *   Create a new file, `main.js`.
-    *   Implement logic to toggle the `.dark-mode` class on the `<body>` when the button is clicked.
-    *   Use `localStorage` to save the user's theme preference, so it persists across sessions.
-4.  **Link JS:** Link the new `main.js` file in `index.html`.
-5.  **GitHub:** Commit and push all changes to the remote repository.
+1.  **JavaScript (`main.js`):**
+    *   Modify the script to dynamically change the text of the `#theme-toggle` button.
+    *   On page load, set the button text to "다크모드" (Dark Mode) if the theme is light, and "라이트모드" (Light Mode) if the theme is dark.
+    *   Update the button text accordingly whenever the theme is toggled.
+2.  **GitHub:** Commit and push the changes to the remote repository.
