@@ -1,17 +1,26 @@
+
 # Project Blueprint
 
 ## Overview
 
-This project is a simple website with a partnership inquiry form.
+A simple, static "Partnership Inquiry" contact form website. The form collects a user's name, email, and a message and submits the data to Formspree.
 
-## Implemented Features
+## Current Features & Design
 
-*   Initial "Hello World" page.
+*   **Structure:** A single `index.html` page.
+*   **Styling:** A single `style.css` file providing basic layout and styles.
+*   **Functionality:** An HTML form that sends data to a Formspree endpoint upon submission.
 
-## Current Task: Add Partnership Inquiry Form
+## Plan for Current Request: Dark/Light Mode
 
-*   **Goal:** Add a form to `index.html` to collect partnership inquiries using Formspree.
-*   **Steps:**
-    1.  Add a form with "Name", "Email", and "Message" fields to `index.html`.
-    2.  Point the form's action to a Formspree endpoint.
-    3.  Add basic styling for the form in `style.css`.
+1.  **HTML:** Add a toggle button to `index.html` to allow users to switch between themes.
+2.  **CSS:**
+    *   Refactor `style.css` to use CSS variables for colors to facilitate easy theme switching.
+    *   Create two color palettes: one for light mode (default) and one for dark mode.
+    *   The dark mode styles will be applied when a `.dark-mode` class is present on the `<body>` element.
+3.  **JavaScript:**
+    *   Create a new file, `main.js`.
+    *   Implement logic to toggle the `.dark-mode` class on the `<body>` when the button is clicked.
+    *   Use `localStorage` to save the user's theme preference, so it persists across sessions.
+4.  **Link JS:** Link the new `main.js` file in `index.html`.
+5.  **GitHub:** Commit and push all changes to the remote repository.
